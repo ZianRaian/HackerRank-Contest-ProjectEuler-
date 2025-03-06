@@ -16,15 +16,18 @@ For each test case, print the largest prime factor of `N`.
 
 ## Example
 
-### Input:
-```
+solutions-(1-30)
+### Input
+
+
 2
 10
 17
 ```
 
-### Output:
-```
+solutions-(1-30)
+### Output
+
 5
 17
 ```
