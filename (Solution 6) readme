@@ -1,0 +1,39 @@
+# Absolute Difference Between Sum of Squares and Square of Sum
+
+This repository contains a Python solution to the problem of finding the absolute difference between the sum of the squares and the square of the sum for the first `N` natural numbers. The solution is implemented in Python and efficiently handles multiple test cases.
+
+## Problem Description
+
+You are given a number `N`, and you need to calculate two values:
+
+1. **Sum of the squares** of the first `N` natural numbers.
+   \[
+   \text{sum\_of\_squares}(N) = 1^2 + 2^2 + 3^2 + ... + N^2
+   \]
+
+2. **Square of the sum** of the first `N` natural numbers.
+   \[
+   \text{square\_of\_sum}(N) = (1 + 2 + 3 + ... + N)^2
+   \]
+
+The absolute difference between these two values is computed as:
+
+\[
+\text{absolute\_difference}(N) = \left| \text{square\_of\_sum}(N) - \text{sum\_of\_squares}(N) \right|
+\]
+
+### Input
+
+- The first line contains an integer `T`, the number of test cases.
+- The next `T` lines each contain a single integer `N` (1 ≤ N ≤ 10^4).
+
+### Output
+
+For each test case, output the absolute difference for the given value of `N`.
+
+
+Time Complexity
+
+    Time Complexity: Each test case runs in constant time O(1)O(1). Therefore, the total time complexity for TT test cases is O(T)O(T).
+    Space Complexity: The space complexity is O(1)O(1) since only a fixed amount of memory is used for each test case.
+
