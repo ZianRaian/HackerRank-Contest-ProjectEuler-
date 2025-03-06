@@ -1,0 +1,27 @@
+This Python project solves the problem of finding the Nth prime number for multiple test cases efficiently. It uses the Sieve of Eratosthenes algorithm to precompute all prime numbers up to the 10,000th prime, allowing us to answer any query in constant time.
+Problem Statement
+
+Given T test cases, where each test case contains an integer N, find the Nth prime number for each test case.
+Example
+
+Input:
+
+2
+3
+6
+
+Output:
+
+5
+13
+
+Explanation:
+
+    The 3rd prime number is 5.
+    The 6th prime number is 13.
+
+Features
+
+    Efficient Prime Generation: Uses the Sieve of Eratosthenes to precompute primes.
+    Fast Query Resolution: Queries can be answered in constant time after precomputation.
+    Handles Multiple Test Cases: Supports up to 1000 test cases with the given constraints.
