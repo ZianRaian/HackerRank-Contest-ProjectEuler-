@@ -1,0 +1,32 @@
+This project is a solution to the "Greatest Product" problem on HackerRank. Given a large number as a string and an integer K, the program finds the maximum product of K consecutive digits within the number. The solution reads multiple test cases, processes each one, and outputs the result.
+
+Problem Statement
+
+For each test case:
+
+Read an integer N (length of the number) and an integer K (number of consecutive digits to consider).
+
+Read an N-digit number as a string.
+
+Compute the maximum product of K consecutive digits.
+
+Print the result.
+
+Input Format
+
+The first line contains an integer T, the number of test cases.
+
+Each test case consists of:
+
+A line containing two integers N and K.
+
+A line containing an N-digit number as a string.
+
+Output Format
+
+For each test case, output the greatest product of K consecutive digits.
+
+
+Time Complexity
+
+The time complexity of this approach is O(NK), where N  is the length of the number and K s the number of consecutive digits being considered. This is because, for each possible starting position of a K -digit window (O(N)), we compute the product by iterating through K digits (O(K)).
