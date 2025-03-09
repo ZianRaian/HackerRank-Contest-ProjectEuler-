@@ -1,0 +1,41 @@
+# Sum of Primes Problem
+
+## Problem Statement
+Given an integer \(N\), find the sum of all prime numbers that are not greater than \(N\).
+
+## Input Format
+- The first line contains an integer \(T\) (number of test cases).
+- The next \(T\) lines each contain an integer \(N\).
+
+## Constraints
+- \(1 \leq T \leq 10^4\)
+- \(1 \leq N \leq 10^6\)
+
+## Output Format
+For each test case, print the sum of all prime numbers less than or equal to \(N\) on a separate line.
+
+## Example
+### Sample Input
+```
+2
+5
+10
+```
+### Sample Output
+```
+10
+17
+```
+
+## Solution Approach
+1. **Use the Sieve of Eratosthenes** to efficiently find all prime numbers up to the maximum possible value of \(N\) (i.e., \(10^6\)).
+2. **Compute cumulative sums** of prime numbers and store them in an array.
+3. **Answer queries in constant time** by looking up the precomputed sum for a given \(N\).
+
+## Implementation Details
+- **Precompute Primes**: Use a boolean array to mark prime numbers efficiently.
+- **Compute Cumulative Sum**: Maintain an array where `prime_sums[i]` stores the sum of all primes up to `i`.
+- **Efficient Query Processing**: Since prime sums are precomputed, each query is answered in \(O(1)\) time.
+
+This approach ensures that we handle large constraints efficiently.
+
