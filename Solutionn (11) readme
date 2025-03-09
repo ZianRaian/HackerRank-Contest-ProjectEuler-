@@ -1,0 +1,45 @@
+# Greatest Product in a 20x20 Grid
+
+## Problem Statement
+Given a **20 × 20** grid of integers, find the greatest product of four adjacent numbers in the same direction:
+- Horizontally (left to right)
+- Vertically (top to bottom)
+- Diagonally (top-left to bottom-right)
+- Diagonally (top-right to bottom-left)
+
+## Input Format
+- Input consists of **20 lines**, each containing **20 integers**.
+- Each integer is between **0 and 100**.
+
+## Constraints
+- **0 ≤ Each integer in the grid ≤ 100**
+- The grid size is **20 × 20**.
+
+## Output Format
+Print a single integer, the maximum product found in the grid.
+
+## Example
+### Sample Input
+```
+89 90 95 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08  
+49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00  
+...
+01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48  
+```
+### Sample Output
+```
+73812150
+```
+
+## Solution Approach
+1. **Iterate through each cell** in the grid.
+2. **Check all four possible directions**:
+   - Rightward (horizontal)
+   - Downward (vertical)
+   - Diagonal down-right
+   - Diagonal down-left
+3. **Calculate the product** for each direction and keep track of the maximum found.
+4. **Return the maximum product** after checking all positions.
+
+This approach ensures all valid four-number sequences are checked efficiently.
+
