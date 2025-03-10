@@ -1,0 +1,58 @@
+The solution optimizes the computation of the first triangle number with over N divisors using the following approach:
+
+    Triangle Number Formula: The nth triangle number is calculated by:
+    Tn=n(n+1)2
+    Tn​=2n(n+1)​
+
+    Given that n and (n+1) are consecutive integers, one of them is always divisible by 2, making the division by 2 efficient.
+
+    Divisor Counting:
+        To find the number of divisors of a number efficiently, we use a square root factorization approach. The divisors come in pairs, so we only need to check up to the square root of the number, which reduces the complexity to O(√n).
+
+    Precomputation:
+        Instead of computing the first triangle number with more than N divisors for each query, the program precomputes triangle numbers for all possible values of N (up to the maximum queried value). This allows for O(1) time complexity per query after precomputation.
+
+    Efficient Query Handling:
+        The precomputed results are stored in a dictionary, where the key is the number of divisors, and the value is the corresponding triangle number. When processing the test cases, the program simply looks up the first triangle number that has more divisors than N.
+
+How to Run the Code
+1. Input Format
+
+    The first line contains an integer T representing the number of test cases.
+    The following T lines contain an integer N, where each line represents a different test case. For each test case, the program should output the first triangle number with more than N divisors.
+
+Example Input
+
+4
+1
+2
+3
+4
+
+2. Output Format
+
+For each test case, output the first triangle number with more than N divisors.
+Example Output
+
+3
+6
+6
+28
+
+Code Explanation
+Main Components:
+
+    count_divisors(n):
+        Calculates the number of divisors of a given number n using optimized square root factorization.
+    precompute_triangle_numbers(limit):
+        Precomputes the first triangle number with more than N divisors for all possible values up to limit (the largest N requested).
+    sys.stdin.read():
+        Efficiently reads all input at once, especially useful when handling multiple test cases.
+    Answering Queries:
+        After precomputing the results, the program answers each query in constant time O(1) by looking up the precomputed dictionary.
+
+Optimizations
+
+    Efficient Divisor Counting: Using square root factorization to count divisors in O(√n) time.
+    Precomputation: Storing results for all possible N values to answer queries in constant time O(1).
+    Reduced Time Complexity: The program handles multiple test cases efficiently without recalculating triangle numbers or divisors repeatedly.
