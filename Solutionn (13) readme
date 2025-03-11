@@ -1,0 +1,44 @@
+Problem Statement
+
+Given N (1 ≤ N ≤ 1000) 50-digit numbers, compute the sum and print only the first 10 digits of the final sum.
+Input Format
+
+    The first line contains an integer N, the number of 50-digit numbers.
+    The next N lines each contain a 50-digit number.
+
+Output Format
+
+Print only the first 10 digits of the sum.
+Example
+Sample Input
+
+5
+37107287533902102798797998220837590246510135740250
+46376937677490009712648124896970078050417018260538
+74324986199524741059474233309513058123726617309629
+91942213363574161572522430563301811072406154908250
+23067588207539346171171980310421047513778063246676
+
+Sample Output
+
+2728190129
+
+Solution Approach
+Key Observations
+
+    The sum of N 50-digit numbers can be at most 53 digits long.
+    We only need the first 10 digits of the sum.
+    Python’s int type supports arbitrary precision, allowing us to sum very large numbers directly.
+
+Optimized Strategy
+
+    Read N numbers and sum them directly using Python's built-in arithmetic.
+    Convert the sum to a string and extract the first 10 digits.
+
+Complexity Analysis
+
+    Reading Input: O(N)
+    Summing Numbers: O(N)
+    String Conversion & Slicing: O(1)
+    Overall Complexity: O(N) (Linear Time)
+
