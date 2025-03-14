@@ -1,0 +1,61 @@
+Problem Statement
+
+The Collatz sequence is defined as follows for a given number n:
+
+    If n is even → n = n / 2
+    If n is odd → n = 3 * n + 1
+    The sequence terminates when n = 1.
+
+Given an integer N, determine which starting number ≤ N produces the longest Collatz sequence. If multiple numbers produce the longest chain, return the maximum such number.
+Input Format
+
+    The first line contains an integer T, the number of test cases.
+    Each of the next T lines contains an integer N.
+
+Constraints
+
+    1≤T≤1041≤T≤104
+    1≤N≤5×1061≤N≤5×106
+
+Output Format
+
+For each test case, print the number ≤ N that produces the longest Collatz sequence. If multiple numbers have the same sequence length, print the maximum number.
+Example
+Sample Input
+
+3
+10
+15
+20
+
+Sample Output
+
+9
+9
+19
+
+Approach
+Key Observations
+
+    Brute force is too slow
+        Checking every number up to N for each test case would time out.
+    Efficient Approach
+        Precompute results up to max_N using memoization and dynamic programming.
+        Store the longest sequence number at each N so queries can be answered in O(1).
+        Optimize input handling to handle large constraints.
+
+Optimized Algorithm
+
+    Precompute results up to the largest N from input
+        Use dp[i] to store the sequence length for i.
+        Use max_num[i] to store the number with the longest sequence up to i.
+
+    Answer each test case in O(1)
+        Store answers in max_num[] so that we can return results instantly.
+
+Complexity Analysis
+
+    Precomputing (compute_collatz): O(N log N)
+        Each number's sequence has at most log N steps.
+    Query Handling (solve()): O(1) per query
+    Overall Complexity: O(N log N) + O(T) (Fast for large constraints).
