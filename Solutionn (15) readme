@@ -1,0 +1,42 @@
+Problem Statement
+
+Given an N × M grid, you can only move right or down from the top-left corner to the bottom-right corner. The task is to calculate the number of distinct paths to reach the destination. Since the number of ways can be large, return the result modulo 109+7109+7.
+Constraints
+
+    1≤T≤1031≤T≤103 (Number of test cases)
+    1≤N≤5001≤N≤500 (Grid height)
+    1≤M≤5001≤M≤500 (Grid width)
+
+Example
+Input
+
+2
+2 2
+3 2
+
+Output
+
+6
+10
+
+Solution Approach 
+
+This problem is a combinatorial path counting problem, where the number of ways to move from the top-left to the bottom-right in an N × M grid is given by the binomial coefficient:
+Ways=(N+MN)=(N+M)!N!⋅M!
+Ways=(NN+M​)=N!⋅M!(N+M)!​
+
+Since factorials can grow extremely large, we compute results modulo 109+7109+7 using modular inverse.
+Optimized Approach
+
+    Precompute Factorials: Compute (N+M)!(N+M)! up to 1000!.
+    Use Modular Inverse: Use Fermat’s Theorem to efficiently compute (N!⋅M!)−1mod  (109+7)(N!⋅M!)−1mod(109+7) in O(log⁡N)O(logN).
+    Query Processing in O(1): Once factorials and inverses are precomputed, each query can be answered in constant time.
+
+
+Time Complexity Analysis
+Operation	Complexity
+Precomputing Factorials	O(N)O(N)
+Computing Modular Inverses	O(N)O(N)
+Query Processing	O(1)O(1) per query
+
+Total complexity is O(N) precomputation + O(1) per test case, making it super fast!
