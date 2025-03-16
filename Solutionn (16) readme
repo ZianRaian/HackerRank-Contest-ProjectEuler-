@@ -1,0 +1,46 @@
+Given an integer N, compute the sum of the digits of 2^N.
+Input Format
+
+    The first line contains an integer T, the number of test cases.
+    Each of the next T lines contains an integer N.
+
+Constraints
+
+    1≤T≤1001≤T≤100
+    1≤N≤1041≤N≤104
+
+Output Format
+
+For each test case, print the sum of the digits of 2^N.
+Example
+Sample Input
+
+3
+3
+4
+7
+
+Sample Output
+
+8
+7
+11
+
+Approach
+Key Observations
+
+    Direct Calculation of 2^N
+        Python supports arbitrary-precision integers, so we can directly compute 2^N for large values of N (up to 10⁴).
+
+    Extracting and Summing Digits
+        Convert 2^N to a string and sum its digits.
+
+    Efficient Execution
+        Use fast exponentiation (2**N) to compute large powers efficiently.
+        Process each test case in O(K), where K is the number of digits in 2^N (≈ N log 2).
+
+Complexity Analysis
+
+    Computing 2^N: O(K), where K ≈ N log 2 (number of digits).
+    Summing digits: O(K).
+    Overall Complexity: O(K) per test case (efficient for N up to 10⁴).
