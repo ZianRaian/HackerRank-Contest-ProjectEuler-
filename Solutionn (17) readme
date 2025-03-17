@@ -1,0 +1,20 @@
+This problem requires converting a number into its English word representation with the first character of each word capitalized.
+
+Solution Approach 
+
+We break the number into segments of Billions, Millions, Thousands, and Hundreds, and convert each segment to words using a predefined mapping.
+Key Considerations
+
+ Use recursion to process numbers efficiently.
+ Predefine words for numbers 1-19 and multiples of 10 (20, 30, ..., 90).
+ Handle edge cases like 0, and ensure proper spacing in output.
+
+Breaks down number efficiently → Works in O(log N) time
+Uses recursion for modularity → Reduces redundant computations
+Handles edge cases like 0 properly
+Uses sys.stdin.readline() and sys.stdout.write() → Optimized for large inputs
+
+Time Complexity Analysis
+Operation	Complexity
+Processing Each Test Case	O(log N)
+Overall for T Cases	O(T log N) (Efficient for large values)
