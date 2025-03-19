@@ -1,0 +1,68 @@
+Problem Statement
+
+Given a range of dates, count how many times the first day of the month falls on a Sunday between two given dates (inclusive).
+Constraints
+
+    1≤T≤1001≤T≤100 (Number of test cases)
+    1900≤Y1≤10161900≤Y1≤1016 (Start year)
+    Y1≤Y2≤(Y1+1000)Y1≤Y2≤(Y1+1000) (End year constraint)
+    1≤M1,M2≤121≤M1,M2≤12 (Months between 1-12)
+    1≤D1,D2≤311≤D1,D2≤31 (Days between 1-31)
+
+Input Format
+
+    First line contains T, the number of test cases.
+    Each test case consists of two lines:
+        Y1 M1 D1 → Start Date (Year, Month, Day)
+        Y2 M2 D2 → End Date (Year, Month, Day)
+
+Output Format
+
+For each test case, print the count of Sundays that fall on the first day of the month.
+Example
+Sample Input
+
+2
+1900 1 1
+1910 1 1
+2000 1 1
+2020 1 1
+
+Sample Output
+
+18
+35
+
+Solution Approach
+
+1 Using Zeller’s Congruence Formula
+
+This formula calculates the day of the week for any given date in O(1) time.
+
+    0 → Saturday
+    1 → Sunday
+    2 → Monday
+    …
+    6 → Friday
+
+If the first of the month is a Sunday (1), we count it.
+
+
+2️ Iterating Over Months Efficiently
+
+    Instead of iterating over each day, we only iterate over the first day of each month.
+    This reduces complexity to O(12 × (Y2 - Y1)), making it fast for large ranges.
+
+Time Complexity Analysis
+Operation	Complexity
+Zeller’s Congruence (Day Calculation)	O(1)
+Iterate Over Months	O(12 × (Y2 - Y1))
+Total Complexity	O(T × 12 × (Y2 - Y1)) (Efficient for large inputs)
+
+
+Edge Cases Considered
+
+✔ Leap years (Feb 29)
+✔ Large values of Y1 (up to 10161016)
+✔ Exact month-end and month-start cases
+✔ Minimum and maximum values in constraints
