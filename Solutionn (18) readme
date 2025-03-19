@@ -1,0 +1,69 @@
+This problem requires finding the maximum sum path from the top to the bottom of a given triangle.
+
+
+Solution Approach 
+
+We use bottom-up dynamic programming (DP) to reduce redundant calculations and efficiently compute the result.
+Key Observations
+
+    We start from the second last row and compute the best path going upwards.
+    Instead of creating a separate DP table, we modify the triangle in-place for better memory efficiency.
+    The maximum sum at each step is computed as:
+    triangle[i][j]=triangle[i][j]+max⁡(triangle[i+1][j],triangle[i+1][j+1])
+    triangle[i][j]=triangle[i][j]+max(triangle[i+1][j],triangle[i+1][j+1])
+
+ Uses in-place DP modification → O(N²) time complexity instead of exponential recursion.
+ Efficient memory usage → Modifies the input triangle itself, avoiding extra space.
+ Fast input handling → Uses sys.stdin.readline() for fast reading.
+
+
+
+Example Run
+Input
+
+1
+4
+3
+7 4
+2 4 6
+8 5 9 3
+
+Processing
+
+Step 1:
+   3
+  7  4
+ 2  4  6
+8  5  9  3   → Start from the second last row
+
+Step 2:
+   3
+  7  4
+10 13 15
+8  5  9  3  → Compute max from bottom row
+
+Step 3:
+   3
+20 19
+10 13 15
+8  5  9  3  → Compute max from next row
+
+Step 4:
+23
+20 19
+10 13 15
+8  5  9  3  → The top cell has the final answer
+
+Output
+
+23
+
+
+Complexity Analysis
+
+Operation	Complexity
+Reading Input	O(N²)
+Processing DP	O(N²)
+Output Printing	O(1) per test case
+Total Complexity	O(N²) per test case (Efficient for N≤15N≤15)
+
