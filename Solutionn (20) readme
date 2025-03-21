@@ -1,0 +1,46 @@
+Given an integer N, compute N! (N factorial) and find the sum of its digits.
+Since N can be large (up to 1000), an optimized approach is required.
+Input Format
+
+    The first line contains an integer T (number of test cases).
+    The next T lines each contain an integer N.
+
+Constraints
+
+    1≤T≤1001≤T≤100
+    0≤N≤10000≤N≤1000
+
+Output Format
+
+For each test case, print the sum of digits of N! in a new line.
+Example
+Input
+
+2
+3
+6
+
+Output
+
+6
+9
+
+Solution Approach
+
+    Precompute Factorial Digit Sums:
+        Compute N! once using math.factorial(N).
+        Convert N! to a string and sum its digits.
+        Store the results for 0 to 1000 in a list.
+
+    Efficient Query Processing:
+        Since N! values are precomputed, each test case is answered in O(1) time.
+
+
+Complexity Analysis
+Operation	Complexity
+Precompute Factorial Sums	O(N log N)
+Each Query Lookup	O(1)
+Overall Complexity	O(N log N) + O(T)
+
+
+
