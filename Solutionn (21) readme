@@ -1,0 +1,44 @@
+Problem Statement
+
+Two numbers, A and B, are called amicable if:
+    The sum of proper divisors of A equals B
+    The sum of proper divisors of B equals A
+    A ≠ B
+
+For example:
+    The proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110, and their sum is 284.
+    The proper divisors of 284 are 1, 2, 4, 71, 142, and their sum is 220.
+    Since 220 and 284 satisfy the conditions, they form an amicable pair.
+Task: Given N, find the sum of all amicable numbers less than N.
+
+Input Format
+
+    The first line contains T (number of test cases).
+    The next T lines contain a single integer N.
+
+Constraints
+    1≤T≤10^3
+    1≤N≤10^5
+
+Output Format
+For each test case, print the sum of all amicable numbers less than N.
+
+
+Optimized Approach 
+1. Precompute Proper Divisor Sums Efficiently
+    Use the sieve method to precompute the sum of proper divisors for all numbers up to 100,000 in O(N log N).
+    Iterate through numbers and sum up amicable pairs in a cumulative array for O(1) lookup per test case.
+2. Efficient Query Handling
+    Use precomputed results to answer each test case in O(1).
+
+Why This Works FAST in HackerRank 🚀
+
+ Uses Sieve-like approach to compute divisor sums in O(N log N)
+ Uses a prefix sum array for O(1) query lookup
+ Fast I/O handling with sys.stdin.readline() and sys.stdout.write()
+
+Edge Cases Considered
+
+ Smallest inputs (N = 1) → Output is 0.
+ Large N values (N = 100000) → Optimized using precomputed arrays.
+ Multiple test cases (T = 1000) → Uses fast O(1) lookup per test case.
