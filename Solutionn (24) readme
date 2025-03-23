@@ -1,0 +1,55 @@
+Problem Statement
+
+A permutation is an ordered arrangement of objects. If all permutations are listed in lexicographic order, we need to find the Nth lexicographic permutation of the string "abcdefghijklm".
+Input Format
+
+    The first line contains an integer T (number of test cases).
+
+    Each of the next T lines contains an integer N.
+
+Constraints
+
+    1≤T≤1001≤T≤100
+
+    1≤N≤13!1≤N≤13! (479001600)
+
+Output Format
+
+    Print the Nth lexicographic permutation of "abcdefghijklm" for each test case.
+
+Example
+Sample Input
+
+2
+1
+2
+
+Sample Output
+
+abcdefghijklm
+abcdefghijkml
+
+Approach
+
+This problem is solved using the factorial number system:
+
+    Precompute factorials for faster calculations.
+
+    Determine each character of the permutation by using integer division and modulus.
+
+    Efficiently remove used characters from the available pool.
+
+Time Complexity
+
+    Precomputing Factorials: O(13)O(13)
+
+    Finding N-th Permutation: O(13)O(13)
+
+    Total Complexity per query: O(1)O(1) 
+
+
+Optimizations Used
+
+Precomputed Factorials → Speeds up calculations
+List Removal (del chars[idx]) → More efficient than .pop(idx)
+Buffered Output (sys.stdout.write()) → Faster than multiple print() calls
