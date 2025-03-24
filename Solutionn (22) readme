@@ -1,0 +1,111 @@
+This program calculates the "name score" for a given set of names based on their alphabetical position in a sorted list.
+Problem Statement
+
+You are given N names. First, sort them in lexicographical (alphabetical) order. Then, for each name, calculate its name score as:
+score=(position in sorted list)×(sum of character values)
+score=(position in sorted list)×(sum of character values)
+
+where each letter's value is A = 1, B = 2, ..., Z = 26.
+
+For Q queries, print the precomputed name score of the given name.
+Input Format
+
+    The first line contains an integer N (number of names).
+
+    The next N lines contain one name each.
+
+    The next line contains an integer Q (number of queries).
+
+    The next Q lines contain a single name.
+
+Output Format
+
+    For each query, print the name score.
+
+Constraints
+
+    1 ≤ N ≤ 5200
+
+    1 ≤ Q ≤ 100
+
+    Length of each name is < 12 characters.
+
+    Names consist of uppercase English letters only.
+
+
+
+Explanation of the Code
+
+    Sorting Names Efficiently
+
+        We first store the names in a list and sort them alphabetically.
+
+        Sorting takes O(N log N) time.
+
+    Precomputing Name Scores
+
+        Compute the alphabetical value of each name (sum of character values).
+
+        Multiply the value by its position in the sorted list.
+
+        Store results in a dictionary for O(1) lookup.
+
+    Query Processing
+
+        Since the names are already precomputed, each query runs in O(1) time.
+
+        Using dictionary lookup speeds up query execution.
+
+    Fast Input/Output Handling
+
+        Uses sys.stdin.readline() for fast input reading.
+
+        Uses sys.stdout.write() for efficient output writing.
+
+Time Complexity
+
+    Sorting Names: O(Nlog⁡N)O(NlogN)
+
+    Precomputing Scores: O(N)O(N)
+
+    Query Processing: O(1)O(1) per query
+
+    Total Complexity: O(Nlog⁡N)+O(Q)O(NlogN)+O(Q) (Efficient!)
+
+Example Walkthrough
+Sample Input
+
+5
+ALEX
+LUIS
+JAMES
+BRIAN
+PAMELA
+1
+PAMELA
+
+Sorted Names
+
+ALEX, BRIAN, JAMES, LUIS, PAMELA
+
+Score Calculation
+
+    ALEX → Position 1, Value 42 → Score 1 × 42 = 42
+
+    BRIAN → Position 2, Value 44 → Score 2 × 44 = 88
+
+    JAMES → Position 3, Value 48 → Score 3 × 48 = 144
+
+    LUIS → Position 4, Value 56 → Score 4 × 56 = 224
+
+    PAMELA → Position 5, Value 48 → Score 5 × 48 = 240
+
+Output
+
+240
+
+Efficiency of code
+
+ Sorting once and using a dictionary → Faster queries
+ Precomputing name scores → Saves time during lookups
+ Optimized I/O handling → Faster execution in large cases
