@@ -1,0 +1,55 @@
+Problem Description
+
+A unit fraction 1/d often has a repeating decimal cycle. The goal is to find the value of d < N that produces the longest repeating cycle in its decimal fraction representation.
+
+For example:
+
+    13=0.3‾31​=0.3 (cycle length = 1)
+    17=0.142857‾71​=0.142857 (cycle length = 6)
+
+Given an integer N, find the integer d < N with the longest repeating cycle.
+Input Format
+
+    The first line contains an integer T, the number of test cases.
+    The next T lines each contain an integer N.
+
+Constraints
+
+    1≤T≤10001≤T≤1000
+    1≤N≤1041≤N≤104
+
+Output Format
+
+For each test case, print the integer d < N that produces the longest repeating cycle.
+Sample Input
+
+2
+10
+100
+
+Sample Output
+
+7
+97
+
+Approach
+
+    Find Primes Efficiently: Use Sieve of Eratosthenes to precompute all prime numbers up to 104104.
+    Calculate Cycle Length: For each prime d, determine the length of the repeating cycle using modular arithmetic.
+    Precompute Best d for Each N: Store the best d (longest cycle) for all values up to 104104.
+    Fast Queries: For each N, return the precomputed best d in O(1)O(1) time.
+
+Implementation Details
+
+    Sieve of Eratosthenes to quickly identify prime numbers.
+    Modular division technique to compute repeating decimal cycles efficiently.
+    Precompute and store results for all N≤104N≤104 to make queries run in constant time.
+    Optimized I/O using sys.stdout.write() for handling large inputs.
+
+Time Complexity
+
+    Sieve of Eratosthenes: O(Nlog⁡log⁡N)O(NloglogN)
+    Cycle Length Calculation: O(N)O(N) in worst case.
+    Precompute Best d: O(N)O(N)
+    Query Time: O(1)O(1)
+
