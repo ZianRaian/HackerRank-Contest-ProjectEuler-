@@ -1,0 +1,53 @@
+Problem Statement
+
+The Fibonacci sequence is defined as:
+F1=1,F2=1,Fn=Fn−1+Fn−2for n≥3
+F1​=1,F2​=1,Fn​=Fn−1​+Fn−2​for n≥3
+
+We need to determine the index of the first Fibonacci number that contains at least NN digits.
+Input Format
+
+    The first line contains an integer TT, the number of test cases.
+    Each of the next TT lines contains an integer NN (the number of digits).
+
+Constraints
+
+    1≤T≤50001≤T≤5000
+    2≤N≤50002≤N≤5000
+
+Output Format
+
+    For each test case, print a single integer representing the index of the first Fibonacci number that has at least NN digits.
+
+Example
+Input
+
+2
+3
+4
+
+Output
+
+12
+17
+
+Efficient Approach
+
+Instead of computing Fibonacci numbers iteratively (which is slow), we use logarithmic estimation to find the index directly:
+n≥(N−1)+log⁡10(5)log⁡10(φ)
+n≥log10​(φ)(N−1)+log10​(5
+​)​
+
+Where:
+
+    φ=1+52φ=21+5
+
+​​ (Golden Ratio)
+log⁡10(φ)log10​(φ) and log⁡10(5)log10​(5) are precomputed.
+
+
+Time Complexity Analysis
+
+    Precomputation: O(1)O(1) using a direct formula for Fibonacci digits.
+    Query Handling: O(1)O(1) (direct lookup in precomputed array).
+    Total Complexity: O(1)O(1) per query, making it optimal even for large inputs.
