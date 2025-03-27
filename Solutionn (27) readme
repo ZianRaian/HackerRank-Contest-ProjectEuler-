@@ -1,0 +1,65 @@
+## Problem Statement
+
+The quadratic equation: n² + a * n + b
+generates prime numbers for consecutive values of `n`, starting from `n = 0`.
+
+
+Given a limit `N`, find the coefficients `(a, b)` that produce the **longest sequence of primes**, where:
+
+- `|a| ≤ N`
+- `|b| ≤ N`
+
+
+**Input Format**
+A single integer N
+
+
+**Constraints**
+42 ≤ N ≤ 2000
+
+**Output Format**
+
+Print the values of a and b separated by space.
+---
+## Example
+### **Input**
+42
+
+### **Output**
+-1 41
+---
+
+## **Approach**
+
+1. **Use Sieve of Eratosthenes** to precompute primes up to `2N²` for fast lookup.
+2. **Iterate through all values of a and b** in the range `[-N, N]`.
+3. **Check how many consecutive primes** are produced by `n² + a * n + b`.
+4. **Store the best coefficients** that generate the most primes.
+5. **Print the optimal values**.
+
+---
+
+## **Code Explanation**
+- The program first computes prime numbers using **Sieve of Eratosthenes**.
+- It then **iterates through all valid coefficients** and checks how many consecutive primes are generated.
+- The pair `(a, b)` that produces the **maximum number of primes** is printed.
+
+---
+
+## **Performance**
+| Function | Complexity |
+|----------|------------|
+| Sieve of Eratosthenes | \( O(N^2 \log \log N) \) |
+| Prime Checking | \( O(1) \) (Set lookup) |
+| Overall Algorithm | \( O(N^2) \) |
+
+This is **optimized** to handle the maximum constraints efficiently.
+
+---
+
+## **Why This Approach Works?**
+ Uses **precomputed primes** for fast lookup.  
+ Efficient **prime checking** with a **set**.  
+ Runs in **O(N²)**, making it **fast for large inputs**.  
+
+---
