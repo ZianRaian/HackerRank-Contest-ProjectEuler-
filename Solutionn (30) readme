@@ -1,0 +1,52 @@
+This program finds all numbers that can be written as the sum of the Nth powers of their digits, for a given value of N (where 3 ≤ N ≤ 6). It computes the sum of all such numbers and prints the result.
+
+Problem Statement
+For a given integer N, find the sum of all numbers that can be written as the sum of the Nth powers of their digits. For example, for N=4, the numbers 1634, 8208, and 9474 satisfy the condition where the sum of the fourth powers of their digits equals the number itself.
+
+Input Format
+A single integer N (3 ≤ N ≤ 6).
+
+Output Format
+A single integer: The sum of all numbers that can be written as the sum of the Nth powers of their digits.
+
+Example
+Input:
+Copy
+Edit
+4
+Output:
+Copy
+Edit
+19316
+Approach
+Understanding the Problem:
+
+We need to find all numbers that can be written as the sum of their digits raised to the power N.
+
+We need to determine the range of numbers to check by calculating an upper bound based on the digit powers.
+
+Upper Bound Calculation:
+
+For a given N, the largest possible value for a digit raised to the power N is 9^N.
+
+We estimate the upper bound by multiplying (N+1) by 9^N. This helps us limit the search range for valid numbers.
+
+Iterative Approach:
+
+We loop through numbers starting from 10 (since 1 is not considered) up to the calculated upper bound.
+
+For each number, we calculate the sum of the Nth powers of its digits and check if the number equals the sum.
+
+Sum of Valid Numbers:
+
+If a number satisfies the condition, we add it to the list of valid numbers.
+
+After checking all numbers, we print the sum of these valid numbers.
+
+Functions:
+sum_of_digit_powers(number, N): Calculates the sum of the digits of a number raised to the power of N.
+
+find_digit_power_numbers(N): Finds all numbers that can be written as the sum of the Nth powers of their digits and returns them as a list.
+
+
+
